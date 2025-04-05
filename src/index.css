@@ -40,7 +40,8 @@
 
 :root {
   --A01: #7c5dfa;
-  --deep-black: #0c0e16;
+  /* --deep-black: #0c0e16; */
+  --deep-black: #141625;
   --blue-gray: #888eb0;
   --blue-white: #f8f8fb;
   --dark-purple: #252945;
