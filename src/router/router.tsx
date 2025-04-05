@@ -9,6 +9,7 @@ import Register from "../components/authentication/Register";
 import ProtectedRoute from "../components/ProtectedRoute";
 import NewInvoicePage from "../pages/NewInvoice";
 import EditInvoicePage from "../pages/EditInvoice";
+
 function ErrorBoundary() {
   const error = useRouteError();
   console.log(error);
