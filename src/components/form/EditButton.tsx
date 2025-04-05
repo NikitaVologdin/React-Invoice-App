@@ -1,6 +1,6 @@
 import { useMediaQuery } from "react-responsive";
 import { AnimatePresence } from "motion/react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux/hooks";
 import { createPortal } from "react-dom";
 import Dialog from "../dialogs/Dialog";

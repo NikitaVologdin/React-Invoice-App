@@ -1,7 +1,7 @@
 import { useMediaQuery } from "react-responsive";
 import { AnimatePresence, motion } from "motion/react";
 import plus from "../../assets/icon-plus.svg";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux/hooks";
 import { createPortal } from "react-dom";
 import Dialog from "../dialogs/Dialog";

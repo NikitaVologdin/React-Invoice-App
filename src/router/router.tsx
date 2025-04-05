@@ -1,4 +1,4 @@
-import { createBrowserRouter, useRouteError } from "react-router-dom";
+import { createBrowserRouter, useRouteError } from "react-router";
 import AppLayout from "../layouts/App";
 import InvoicesLayout from "../layouts/Invoices";
 import Invoices from "../components/invoices/Invoices";
@@ -9,7 +9,6 @@ import Register from "../components/authentication/Register";
 import ProtectedRoute from "../components/ProtectedRoute";
 import NewInvoicePage from "../pages/NewInvoice";
 import EditInvoicePage from "../pages/EditInvoice";
-
 function ErrorBoundary() {
   const error = useRouteError();
   console.log(error);

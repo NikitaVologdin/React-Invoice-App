@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import PurpleButton from "../../../ui/buttons/PurpleButton";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux/hooks";
 import {

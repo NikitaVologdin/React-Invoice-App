@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import left from "../../assets/icon-arrow-left.svg";
 
 type props = {

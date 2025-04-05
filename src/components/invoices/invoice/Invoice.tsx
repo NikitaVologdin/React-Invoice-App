@@ -3,7 +3,7 @@ import InvoiceDetailsItem from "./InvoiceDetailsItem";
 import { address, item, paidStatus } from "../../../types/invoice";
 import { useMediaQuery } from "react-responsive";
 import GoBack from "../../../ui/navigation/GoBack";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router";
 import { useAppSelector } from "../../../hooks/redux/hooks";
 import DeleteInvoice from "./DeleteInvoice";
 import MarkAsPaid from "./MarkAsPaid";

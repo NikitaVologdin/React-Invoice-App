@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useAppDispatch } from "../hooks/redux/hooks";
 import { showNotification } from "../store/features/notification/notificationSlice";

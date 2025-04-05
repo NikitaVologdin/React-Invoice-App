@@ -4,7 +4,7 @@ import { useState } from "react";
 import { registerUser } from "../../store/features/auth/authActions";
 import { selectAuth } from "../../store/features/auth/authSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux/hooks";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { showNotification } from "../../store/features/notification/notificationSlice";
 
 export default function Signup() {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux/hooks";
 import RedButton from "../../../ui/buttons/RedButton";
 import {

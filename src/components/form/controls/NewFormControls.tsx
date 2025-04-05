@@ -5,7 +5,7 @@ import { setOpenForm } from "../../../store/features/form/formSlice";
 
 import { useMediaQuery } from "react-responsive";
 import { useAppDispatch } from "../../../hooks/redux/hooks";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router";
 import { useForm } from "react-final-form";
 import {
   createDraftFromFormValues,

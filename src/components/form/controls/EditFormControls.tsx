@@ -4,7 +4,7 @@ import { setOpenForm } from "../../../store/features/form/formSlice";
 
 import { useMediaQuery } from "react-responsive";
 import { useAppDispatch } from "../../../hooks/redux/hooks";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 type props = {
   submitForm: () => void;

@@ -1,6 +1,6 @@
 import { getAuth, signOut } from "firebase/auth";
 import logoutIcon from "../../assets/icon-logout.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux/hooks";
 import { logOutUser, selectAuth } from "../../store/features/auth/authSlice";
 import { showNotification } from "../../store/features/notification/notificationSlice";

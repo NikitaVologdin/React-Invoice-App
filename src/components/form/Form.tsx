@@ -6,7 +6,7 @@ import arrayMutators from "final-form-arrays";
 import { ErrorWithId, FormValues, initialValues } from "../../types/form";
 import { validateForm } from "./validateForm";
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router";
 import {
   editDocumentFromFormValues,
   uploadEditedInvoice,
