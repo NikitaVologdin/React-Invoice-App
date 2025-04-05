@@ -7,6 +7,8 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   assetsInclude: ["**/*.woff2"],
   build: {
+    assetsDir: "static", // Organizes assets better
+    copyPublicDir: true, // Ensures public files are copied
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {

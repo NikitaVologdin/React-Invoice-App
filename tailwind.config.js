@@ -7,6 +7,10 @@ module.exports = {
       fontFamily: {
         sans: ["League Spartan", "sans-serif"],
       },
+      fontWeight: {
+        normal: 400,
+        bold: 700,
+      },
     },
   },
   plugins: [
