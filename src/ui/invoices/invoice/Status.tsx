@@ -33,7 +33,7 @@ export default function Status({ status, className = "" }: props) {
       <div className={`flex items-center justify-center gap-2`}>
         <div className={`w-2 h-2 rounded-full ${decoration}`}></div>
         <span
-          className={`font-bold capitalize leading-[15px] -tracking-[0.25px] ${text}`}
+          className={`relative top-0.5 font-bold capitalize leading-[15px] -tracking-[0.25px] ${text}`}
         >
           {status}
         </span>
