@@ -9,7 +9,7 @@ interface TermsState {
 
 const initialState: TermsState = {
   termsOpen: false,
-  option: "Net 1 day",
+  option: "Net 1 day" as Option,
 };
 
 const termsSlice = createSlice({
