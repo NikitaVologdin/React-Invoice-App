@@ -7,23 +7,45 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "dependencies": {
+    "@react-router/fs-routes": "^7.2.0",
+    "@reduxjs/toolkit": "^2.5.1",
+    "@tailwindcss/vite": "^4.0.6",
+    "final-form": "^4.20.10",
+    "final-form-arrays": "^3.1.0",
+    "firebase": "^11.3.1",
+    "motion": "^12.4.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-error-boundary": "^5.0.0",
+    "react-final-form": "^6.5.9",
+    "react-final-form-arrays": "^3.1.4",
+    "react-redux": "^9.2.0",
+    "react-responsive": "^10.0.0",
+    "react-router-dom": "^7.2.0",
+    "tailwindcss": "^4.0.6",
+    "use-persisted-state": "^0.3.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
+    "@types/use-persisted-state": "^0.3.5",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^9.19.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
+    "source-map-explorer": "^2.5.3",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.22.0",
-    "vite": "^6.1.0"
+    "vite": "^6.1.0",
+    "vitest": "^3.0.7"
   }
 }

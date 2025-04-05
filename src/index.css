@@ -1,68 +1,57 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "League Spartan";
+  src: url("/src/assets/fonts/LeagueSpartan-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root,
+  :host,
+  html,
+  body {
+    --default-font-family: "League Spartan", sans-serif; /* Override the variable */
+    font-family: "League Spartan", sans-serif; /* Direct fallback */
+  }
+}
+
+@theme {
+  --text-xs: 0.8125rem;
+  --text-base: 0.9375rem;
+}
+
+@layer utilities {
+  html:has(dialog[open]),
+  body:has(dialog[open]) {
+    @apply overflow-hidden;
+  }
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  --A01: #7c5dfa;
+  --deep-black: #0c0e16;
+  --blue-gray: #888eb0;
+  --blue-white: #f8f8fb;
+  --dark-purple: #252945;
+  --A03: #1e2139;
+  --A04: #252945;
+  --purple: #7c5dfa;
+  --A05: #dfe3fa;
+  --A07: #7e88c3;
+  --A06: #888eb0;
+  --A08: #0c0e16;
+  --green: #33d69f;
+  --red: #ec5757;
+  --pale-red: #ff9797;
+  --light-green: #0dd6a014;
+  --orange: #ff8f00;
+  --light-orange: #ff91001a;
+  --grey-black: #373b53;
+  --light-grey-black: #373b530f;
+  --purple-black: #1e2139;
+  --light-purple-black: #252945;
 }

@@ -1,0 +1,24 @@
+import { useParams } from "react-router-dom";
+import Form from "../components/form/Form";
+import GoBack from "../ui/navigation/GoBack";
+import { useAppSelector } from "../hooks/redux/hooks";
+import { selectInvoices } from "../store/features/invoices/invoicesSlice";
+import invoiceToFormData from "../utils/invoiceToFormData";
+
+export default function EditInvoice() {
+  const { invoiceId } = useParams();
+  const { invoices } = useAppSelector(selectInvoices);
+  const invoice = invoices.find((i) => i.id === invoiceId)!;
+  const formValues = invoiceToFormData(invoice);
+
+  return (
+    <div className="bg-white dark:bg-[#141625] absolute z-0 top-0 bottom-0 left-0 right-0 px-6">
+      <GoBack href={"../invoices"} />
+      <h1 className="font-bold text-2xl leading-8 -tracking-[0.5px] text-[#0C0E16] mb-[22px] mt-[10px]">
+        Edit &nbsp;<span className="text-[#888EB0]">#</span>
+        {invoiceId?.toUpperCase()}
+      </h1>
+      <Form mode="edit" invoiceValues={formValues} />
+    </div>
+  );
+}
