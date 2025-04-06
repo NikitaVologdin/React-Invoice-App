@@ -119,6 +119,10 @@ export default function Terms({ input }: props) {
                     className={optionClass}
                     key={option}
                     whileHover={{ color: "#7C5DFA" }}
+                    whileTap={{ color: "#7C5DFA" }}
+                    onTap={() => {
+                      dispatch(setTermsOpen(false));
+                    }}
                   >
                     {option}
                   </motion.li>
