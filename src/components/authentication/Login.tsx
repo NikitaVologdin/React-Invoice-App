@@ -15,20 +15,13 @@ export default function Login() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  function resetInputs() {
-    setEmail("");
-    setPassword("");
-  }
-
   function handleLogin(event: FormEvent) {
     event.preventDefault();
-    resetInputs();
     dispatch(loginUser({ email, password }));
   }
 
   useEffect(() => {
     if (success && userInfo) {
-      resetInputs();
       navigate(`/${userInfo.id}/invoices`);
       dispatch(showNotification(`Nice to see you ${userInfo.name}`));
     }
