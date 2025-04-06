@@ -3,7 +3,6 @@ import { collection, query, where, orderBy, getDocs } from "firebase/firestore";
 import { RootState, store } from "../store/store";
 import { initializeInvoices } from "../store/features/invoices/invoicesSlice";
 import { invoice } from "../types/invoice";
-// import { showNotification } from "../store/features/notification/notificationSlice";
 
 async function loadInvoices({ userId }: { userId: string }) {
   try {
@@ -24,9 +23,7 @@ async function loadInvoices({ userId }: { userId: string }) {
       return invoices;
     }
   } catch (error) {
-    // console.dir(error);
     console.error("Error fetching invoices:", error);
-    // throw error;
   }
 }
 
@@ -39,11 +36,10 @@ function findInvoice(invoiceId: string, invoices: invoice[]) {
 export async function invoicesLoader({ userId }: { userId: string }) {
   const state: RootState = store.getState();
 
-  if (state.invoices.invoices.length) {
+  if (state.invoices.invoices.length > 0) {
     return state.invoices.invoices;
   }
-
-  await loadInvoices({ userId });
+  return await loadInvoices({ userId });
 }
 
 export async function invoiceLoader({
