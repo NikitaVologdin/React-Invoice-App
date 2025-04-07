@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/redux/hooks";
 import { loginUser } from "../../store/features/auth/authActions";
 import { selectAuth } from "../../store/features/auth/authSlice";
 import { showNotification } from "../../store/features/notification/notificationSlice";
+import BouncingDotsLoader from "../BouncingDotsLoader";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -72,7 +73,7 @@ export default function Login() {
         </div>
         <div className={buttonsControl}>
           <button className={buttonStyle} type="submit">
-            {loading ? "Loading" : "Log in"}
+            {loading ? <BouncingDotsLoader text="Logging" /> : "Log in"}
           </button>
           <Link className={buttonStyle} to={"/register"}>
             Sign Up

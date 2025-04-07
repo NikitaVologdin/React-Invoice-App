@@ -6,6 +6,7 @@ import { selectAuth } from "../../store/features/auth/authSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux/hooks";
 import { useNavigate } from "react-router";
 import { showNotification } from "../../store/features/notification/notificationSlice";
+import BouncingDotsLoader from "../BouncingDotsLoader";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -105,7 +106,7 @@ export default function Signup() {
               disabled={loading}
               style={{ cursor: loading ? "not-allowed" : "pointer" }}
             >
-              {loading ? "Loading..." : "Register"}
+              {loading ? <BouncingDotsLoader text="Registering" /> : "Register"}
             </button>
           </div>
         </form>
