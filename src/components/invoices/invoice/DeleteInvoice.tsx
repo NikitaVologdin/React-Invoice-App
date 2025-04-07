@@ -50,7 +50,7 @@ export default function DeleteInvoice() {
     fadeIn: { opacity: 1 },
   };
   const dialogClass =
-    "rounded-lg absolute top-1/2 -translate-y-1/2 backdrop:bg-[#0000006a] left-6 right-6 md:left-1/2 transform md:-translate-x-1/2";
+    "rounded-lg fixed top-1/2 -translate-y-1/2 backdrop:bg-[#0000006a] left-6 right-6 md:left-1/2 transform md:-translate-x-1/2";
 
   return (
     <>
