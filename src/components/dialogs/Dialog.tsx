@@ -51,7 +51,7 @@ export default function Dialog({
           initial="fadeOut"
           animate="fadeIn"
           exit="fadeOut"
-          className="absolute top-0 bottom-0 left-0 right-0 bg-[#0000006a]"
+          className="fixed top-0 bottom-0 left-0 right-0 bg-[#0000006a]"
         />
       )}
       <motion.dialog

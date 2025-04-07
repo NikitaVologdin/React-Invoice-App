@@ -46,7 +46,7 @@ export default function EditButton() {
             {openForm && (
               <Dialog
                 shown={openForm}
-                className="w-[616px] h-full px-14 pt-[59px] pb-8 absolute bottom-0 top-20 lg:top-0 lg:left-20 rounded-r-[20px] max-h-none dark:bg-[#141625] overflow-y-scroll backdrop:bg-[#0000006a]"
+                className="w-[616px] h-full px-14 pt-[59px] pb-8 fixed bottom-0 top-20 lg:top-0 lg:left-20 rounded-r-[20px] max-h-none dark:bg-[#141625] overflow-y-scroll"
                 variants={dialogVariants}
                 initial="close"
                 animate="open"
