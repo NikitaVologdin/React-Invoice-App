@@ -38,7 +38,7 @@ export default function Form({
   invoiceValues = undefined,
 }: props) {
   const [skipValidation, setSkipValidation] = useState(false);
-
+  const [loading, setLoading] = useState(false);
   const fieldSetStyle = "flex flex-col gap-[25px]";
   const legendStyle =
     "font-bold leading-[15px] text-base -tracking-[0.25px] text-[#7C5DFA] mb-6";
@@ -57,6 +57,10 @@ export default function Form({
   async function submitForm(
     values: FormValues
   ): Promise<void | SubmissionErrors> {
+    setLoading(true);
+    console.log(loading);
+    // await new Promise((resolve) => setTimeout(resolve, 10000));
+
     if (mode === "edit" && invoiceId) {
       const editedDocument = editDocumentFromFormValues(values);
       const prevDocumentState = invoices.invoices.find(
@@ -67,13 +71,16 @@ export default function Form({
         await uploadEditedInvoice(invoiceId, editedDocument);
         dispatch(showNotification(`Invoice ${invoiceId} been updated`));
         if (!component) {
+          setLoading(false);
           navigate(-1);
           return;
         }
+        setLoading(false);
         dispatch(setOpenForm(false));
       } catch (e) {
         dispatch(updateInvoiceState({ invoiceId, changes: prevDocumentState }));
         dispatch(showNotification(e as string));
+        setLoading(false);
         dispatch(setOpenForm(false));
       }
     }
@@ -88,8 +95,10 @@ export default function Form({
         }
         if (!component) {
           navigate(-1);
+          setLoading(false);
           return;
         }
+        setLoading(false);
         dispatch(setOpenForm(false));
       } catch (e) {
         if (e instanceof Error) {
@@ -99,6 +108,7 @@ export default function Form({
           dispatch(showNotification(e.message));
           dispatch(removeInvoice(e.publicId));
         }
+        setLoading(false);
         dispatch(setOpenForm(false));
       }
     }
@@ -304,11 +314,13 @@ export default function Form({
               <NewFormControls
                 submitForm={handleSubmit}
                 component={component}
+                loading={loading}
               />
             ) : (
               <EditFormControls
                 submitForm={handleSubmit}
                 component={component}
+                loading={loading}
               />
             )}
           </div>

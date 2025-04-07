@@ -5,13 +5,19 @@ import { setOpenForm } from "../../../store/features/form/formSlice";
 import { useMediaQuery } from "react-responsive";
 import { useAppDispatch } from "../../../hooks/redux/hooks";
 import { useNavigate } from "react-router";
+import BouncingDotsLoader from "../../BouncingDotsLoader";
 
 type props = {
   submitForm: () => void;
   component: boolean;
+  loading: boolean;
 };
 
-export default function EditFormControls({ submitForm, component }: props) {
+export default function EditFormControls({
+  submitForm,
+  component,
+  loading,
+}: props) {
   const isTablet = useMediaQuery({ query: "(min-width: 640px)" });
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -40,7 +46,7 @@ export default function EditFormControls({ submitForm, component }: props) {
         }
         type="submit"
       >
-        Save Changes
+        {loading ? <BouncingDotsLoader text={"Saving"} /> : "Save Changes"}
       </PurpleButton>
     </div>
   );

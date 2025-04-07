@@ -20,7 +20,7 @@ export default function DeleteInvoice() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const { error, success, deleted } = useAppSelector(selectInvoices);
+  const { error, success, deleted, loading } = useAppSelector(selectInvoices);
 
   useEffect(() => {
     if (success && deleted) {
@@ -75,6 +75,7 @@ export default function DeleteInvoice() {
             <DeleteInvoiceMessage
               onConfirm={setConfirmed}
               onCancel={setCanceled}
+              loading={loading}
             />
           </Dialog>
         )}

@@ -17,13 +17,19 @@ import {
 } from "../../../store/features/invoices/invoicesSlice";
 import { ErrorWithId } from "../../../types/form";
 import { showNotification } from "../../../store/features/notification/notificationSlice";
+import BouncingDotsLoader from "../../BouncingDotsLoader";
 
 type props = {
   submitForm: () => void;
   component: boolean;
+  loading: boolean;
 };
 
-export default function NewFormControls({ submitForm, component }: props) {
+export default function NewFormControls({
+  submitForm,
+  component,
+  loading,
+}: props) {
   const isTablet = useMediaQuery({ query: "(min-width: 640px)" });
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -80,7 +86,7 @@ export default function NewFormControls({ submitForm, component }: props) {
         }
         type="submit"
       >
-        Save Changes
+        {loading ? <BouncingDotsLoader text={"Saving"} /> : "Save Changes"}
       </PurpleButton>
     </div>
   );

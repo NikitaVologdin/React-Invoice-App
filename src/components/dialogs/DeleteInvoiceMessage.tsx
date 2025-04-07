@@ -1,12 +1,18 @@
 import RedButton from "../../ui/buttons/RedButton";
 import WhiteButton from "../../ui/buttons/WhiteButton";
+import BouncingDotsLoader from "../BouncingDotsLoader";
 
 type props = {
   onConfirm: (status: boolean) => void;
   onCancel: (status: boolean) => void;
+  loading: boolean;
 };
 
-export default function DeleteInvoiceMessage({ onConfirm, onCancel }: props) {
+export default function DeleteInvoiceMessage({
+  onConfirm,
+  onCancel,
+  loading,
+}: props) {
   return (
     <div className="bg-white px-8 pt-[34px] pb-8 dark:bg-[#1E2139]">
       <strong className="block text-2xl  font-bold -tracking-[0.25px] text-[var(--deep-black)] leading-8 dark:text-white col-start-1 mb-2 md:mb-3">
@@ -29,7 +35,7 @@ export default function DeleteInvoiceMessage({ onConfirm, onCancel }: props) {
             onConfirm(true);
           }}
         >
-          Delete
+          {loading ? <BouncingDotsLoader text={"Deleting"} /> : "Delete"}
         </RedButton>
       </div>
     </div>
