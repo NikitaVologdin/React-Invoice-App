@@ -62,4 +62,4 @@ Users should be able to:
 
 - Website - [Nikita Vologdin](https://vologdin.eu/portfolio)
 - Frontend Mentor - [@NikitaVologdin](https://www.frontendmentor.io/profile/NikitaVologdin)
-- Linkedin - [](https://www.linkedin.com/in/nikitavologdins/)
+- Linkedin - [Nikita Vologdins](https://www.linkedin.com/in/nikitavologdins/)
